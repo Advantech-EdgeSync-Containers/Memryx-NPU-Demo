@@ -33,7 +33,7 @@ By leveraging advanced object detection capabilities, the application helps moni
     Download the Dockerfile from [this link](https://drive.google.com/file/d/15pgzw-eXDjuaJJjCXAuB7WoZom7jjiPz/view?usp=sharing).
 
 2. **Load a prebuilt Docker image**  
-    If you have a prebuilt image archive (`memryx_demo.tar`), load it using:
+    Load docker image by using:
     ```bash
     docker load -i memryx_demo.tar
     ```
