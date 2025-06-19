@@ -1,10 +1,6 @@
-# Memryx-NPU-Demo
 ![Memryx PPE Demo Logo](media/ppe_logo.png)
-**Version:** 1.0  
-**Release Date:** June 2025  
-**Copyright:** © 2025 Advantech Corporation. All rights reserved.
 
-## PPE Demo from Memryx
+## PPE Demo from MemryX
 
 This demo showcases a Personal Protective Equipment (PPE) detection application using the YOLOv8n model with 512x512 input resolution. The system is designed to predict and classify individuals based on their safety compliance in real-time video streams or images. The model identifies three categories:
 
@@ -22,7 +18,7 @@ By leveraging advanced object detection capabilities, the application helps moni
 ## Requirements
 
 1. Ensure your host machine is equipped with a MemryX MX3 module.
-2. Follow the installation instructions at [MemryX Developer Portal](https://developer.memryx.com/get_started/install.html) to install the MX3 driver. Verify that the driver is successfully installed on your device before proceeding.
+2. Follow the installation instructions at [MemryX Developer Hub](https://developer.memryx.com/get_started/install.html) to install the MX3 driver. Verify that the driver is successfully installed on your device before proceeding.
 3. X11 Display Support: Facilitates seamless rendering of model outputs directly to a host display from inside the container environment.
 4. (Optional) **USB Camera Access**:  
     The application can utilize a connected USB camera for live streaming PPE detection. Ensure your camera is plugged in and accessible to the container for real-time video inference.
