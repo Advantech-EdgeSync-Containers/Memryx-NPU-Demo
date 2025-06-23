@@ -17,7 +17,7 @@ By leveraging advanced object detection capabilities, the application helps moni
 
 ## Requirements
 
-1. Ensure your host machine is equipped with a MemryX MX3 module.
+1. Ensure your host machine is equipped with a [MemryX MX3 module](https://developer.memryx.com/get_started/hardware_setup.html).
 2. Follow the installation instructions at [MemryX Developer Hub](https://developer.memryx.com/get_started/install.html) to install the MX3 driver. Verify that the driver is successfully installed on your device before proceeding.
 3. X11 Display Support: Facilitates seamless rendering of model outputs directly to a host display from inside the container environment.
 4. (Optional) **USB Camera Access**:  
@@ -25,8 +25,21 @@ By leveraging advanced object detection capabilities, the application helps moni
 
 ## How to build
 
-1. **Download the Dockerfile**  
-    Download the Dockerfile from [this link](https://drive.google.com/file/d/15pgzw-eXDjuaJJjCXAuB7WoZom7jjiPz/view?usp=sharing).
+1. **Download the Docker Image**  
+    Download the Docker image from [this link](https://drive.google.com/file/d/15pgzw-eXDjuaJJjCXAuB7WoZom7jjiPz/view?usp=sharing).
+    
+    ### About the Docker Image
+
+    The provided Docker image is designed for seamless deployment and execution of the PPE detection demo on Ubuntu 24.04 host systems. The container comes pre-installed with all necessary dependencies, including:
+
+    - **MemryX Runtime SDK 1.2**: Enables efficient interaction with the MemryX MX3 accelerator.
+    - **Qt Development Tools**: Includes `qtbase5-dev` and `qt5-qmake` for building and running the graphical user interface.
+    - **OpenCV Development Libraries**: `libopencv-dev` for image and video processing tasks.
+    - **CMake**: Facilitates building C++ projects within the container.
+    - **ONNX Runtime v1.18.1**: Provides high-performance inference for ONNX models.
+
+    This Docker image provides a ready-to-use environment for running the PPE detection application, eliminating the need for manually installing dependencies.
+
 
 2. **Load a prebuilt Docker image**  
     Load docker image by using:
