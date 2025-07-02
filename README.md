@@ -23,23 +23,24 @@ By leveraging advanced object detection capabilities, the application helps moni
 4. (Optional) **USB Camera Access**:  
     The application can utilize a connected USB camera for live streaming PPE detection. Ensure your camera is plugged in and accessible to the container for real-time video inference.
 
-## How to build
+## How to Build Docker Image
 
+### About the Docker Image
+
+The provided Docker image is designed for seamless deployment and execution of the PPE detection demo on Ubuntu 24.04 host systems. The container comes pre-installed with all necessary dependencies, including:
+
+- **MemryX Runtime SDK 1.2**: Enables efficient interaction with the MemryX MX3 accelerator.
+- **Qt Development Tools**: Includes `qtbase5-dev` and `qt5-qmake` for building and running the graphical user interface.
+- **OpenCV Development Libraries**: `libopencv-dev` for image and video processing tasks.
+- **CMake**: Facilitates building C++ projects within the container.
+- **ONNX Runtime v1.18.1**: Provides high-performance inference for ONNX models.
+
+This Docker image provides a ready-to-use environment for running the PPE detection application, eliminating the need for manually installing dependencies.
+
+### Approach 1: Setting Up Docker Images by Downloading a TAR File
 1. **Download the Docker Image**  
     Download the Docker image from [this link](https://drive.google.com/file/d/15pgzw-eXDjuaJJjCXAuB7WoZom7jjiPz/view?usp=sharing).
     
-    ### About the Docker Image
-
-    The provided Docker image is designed for seamless deployment and execution of the PPE detection demo on Ubuntu 24.04 host systems. The container comes pre-installed with all necessary dependencies, including:
-
-    - **MemryX Runtime SDK 1.2**: Enables efficient interaction with the MemryX MX3 accelerator.
-    - **Qt Development Tools**: Includes `qtbase5-dev` and `qt5-qmake` for building and running the graphical user interface.
-    - **OpenCV Development Libraries**: `libopencv-dev` for image and video processing tasks.
-    - **CMake**: Facilitates building C++ projects within the container.
-    - **ONNX Runtime v1.18.1**: Provides high-performance inference for ONNX models.
-
-    This Docker image provides a ready-to-use environment for running the PPE detection application, eliminating the need for manually installing dependencies.
-
 
 2. **Load a prebuilt Docker image**  
     Load docker image by using:
@@ -47,10 +48,24 @@ By leveraging advanced object detection capabilities, the application helps moni
     docker load -i memryx_demo.tar
     ```
 
+### Approach 2: Pull the Docker Image from Harbor Registry
+1. **Pull the Docker Image from Harbor Registry**  
+    Use the following command to pull the image:
+    ```bash
+    docker pull harbor.edgesync.cloud/memryx-npu-demo/memryx@sha256:b661667b07e400f3ca3e54bc6887f7812232ebc25765e74203862f0fb0a0e13e
+    ```
+
+2. **Tag the Pulled Image**  
+    After pulling, tag the image for easier reference:
+    ```bash
+    docker tag c8a956486bc0 memryx:demo
+    ```
+
+> **Tip:** You can also use the provided script [`scripts/pull_docker_image.sh`](scripts/pull_docker_image.sh) to automate the image download, loading, and tagging steps described above.
 
 ## How to run
 1. **Run the PPE detection with video**  
-    Start the container with (or use the provided script `scripts/run_ppe_video.sh`):
+    Start the container with (or use the provided script [`scripts/run_ppe_video.sh`](scripts/run_ppe_video.sh)):
     ```bash
     xhost +local:root
     docker run -t -i --rm\
@@ -63,7 +78,7 @@ By leveraging advanced object detection capabilities, the application helps moni
     ```
 
 2. **Run the PPE detection with camera streaming**
-    Start the container with (or use the provided script `scripts/run_ppe_camera.sh`):
+    Start the container with (or use the provided script [`scripts/run_ppe_camera.sh`](scripts/run_ppe_camera.sh)):
     ```bash
     xhost +local:root
     docker run -t -i --rm\

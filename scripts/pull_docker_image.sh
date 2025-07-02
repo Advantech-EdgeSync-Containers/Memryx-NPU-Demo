@@ -1,0 +1,2 @@
+docker pull harbor.edgesync.cloud/memryx-npu-demo/memryx@sha256:b661667b07e400f3ca3e54bc6887f7812232ebc25765e74203862f0fb0a0e13e
+docker tag c8a956486bc0 memryx:demo
