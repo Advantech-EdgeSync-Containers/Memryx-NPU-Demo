@@ -37,18 +37,7 @@ The provided Docker image is designed for seamless deployment and execution of t
 
 This Docker image provides a ready-to-use environment for running the PPE detection application, eliminating the need for manually installing dependencies.
 
-### Approach 1: Setting Up Docker Images by Downloading a TAR File
-1. **Download the Docker Image**  
-    Download the Docker image from [this link](https://drive.google.com/file/d/15pgzw-eXDjuaJJjCXAuB7WoZom7jjiPz/view?usp=sharing).
-    
-
-2. **Load a prebuilt Docker image**  
-    Load docker image by using:
-    ```bash
-    docker load -i memryx_demo.tar
-    ```
-
-### Approach 2: Pull the Docker Image from Harbor Registry
+### Approach 1: Pull the Docker Image from Harbor Registry
 1. **Pull the Docker Image from Harbor Registry**  
     Use the following command to pull the image:
     ```bash
@@ -60,6 +49,18 @@ This Docker image provides a ready-to-use environment for running the PPE detect
     ```bash
     docker tag c8a956486bc0 memryx:demo
     ```
+
+### Approach 2: Setting Up Docker Images by Downloading a TAR File
+1. **Download the Docker Image**  
+    Download the Docker image from [this link](https://drive.google.com/file/d/15pgzw-eXDjuaJJjCXAuB7WoZom7jjiPz/view?usp=sharing).
+    
+
+2. **Load a prebuilt Docker image**  
+    Load docker image by using:
+    ```bash
+    docker load -i memryx_demo.tar
+    ```
+
 
 > **Tip:** You can also use the provided script [`scripts/pull_docker_image.sh`](scripts/pull_docker_image.sh) to automate the image download, loading, and tagging steps described above.
 
